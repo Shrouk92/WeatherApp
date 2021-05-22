@@ -3,4 +3,5 @@
     <string name="entercity">Enter Your City</string>
     <string name="Temp">" 0 +0x00B0"</string>
     <string name="Temprature">" 0 ℃"</string>
+    <string name="Welcome">Welcome</string>
 </resources>
