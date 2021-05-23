@@ -22,40 +22,25 @@
             android:textSize="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.459"
+            app:layout_constraintHorizontal_bias="0.461"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.041"
+            app:layout_constraintVertical_bias="0.023"
             tools:text="@string/Welcome" />
-
-        <EditText
-            android:id="@+id/textView2"
-            android:layout_width="185dp"
-            android:layout_height="51dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="24dp"
-            android:inputType="text"
-            android:text="@={Weather.city}"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.097"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/b"
-            android:layout_width="371dp"
-            android:layout_height="270dp"
+            android:layout_width="372dp"
+            android:layout_height="282dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="160dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/shape_rounded"
             android:foregroundGravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2">
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/textView3"
@@ -137,10 +122,9 @@
             android:layout_width="40dp"
             android:layout_height="51dp"
             android:layout_marginTop="24dp"
+            android:layout_marginEnd="92dp"
             android:background="@android:drawable/divider_horizontal_dim_dark"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.086"
-            app:layout_constraintStart_toEndOf="@+id/textView2"
             app:layout_constraintTop_toBottomOf="@+id/textView"
             app:srcCompat="@android:drawable/ic_menu_search" />
 
@@ -158,7 +142,7 @@
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/b"
-            app:layout_constraintVertical_bias="0.337">
+            app:layout_constraintVertical_bias="0.243">
 
             <ImageView
                 android:id="@+id/imageView"
@@ -287,18 +271,32 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="84dp"
-            android:text="Location"
-            android:textColor="@color/black"
-            android:textSize="18sp"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textinputlayout"
+            android:layout_width="272dp"
+            android:layout_height="102dp"
+            android:layout_marginTop="80dp"
+            android:hint="Location"
+            app:hintTextColor="@color/black"
+            app:endIconMode="clear_text"
+            app:helperText="Required"
+            app:helperTextTextColor="@color/cardview_shadow_end_color"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.09"
+            app:layout_constraintHorizontal_bias="0.094"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textinput"
+                android:layout_width="201dp"
+                android:layout_height="51dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="100dp"
+
+                android:text="@={Weather.city}"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
