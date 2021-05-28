@@ -56,22 +56,22 @@ class WeatherViewModel :ViewModel()
 
     public fun get_Weather(view:View)
     {
-        val C:Call<Currentweather> = WAPI.API_service.get_current_weather(City,Appid , units)
+        val C:Call<Currentweather> = WAPI.API_service.get_current_weather(City,Appid , units,"ar")
         C.enqueue( object : Callback<Currentweather> {
 
             override fun onResponse(call: Call<Currentweather>, response: Response<Currentweather>) {
                 API_Response.value=response.body()
                 if(API_Response.value!=null){
-                    TempratureObserver.set(API_Response.value?.main?.temp.toString()+"°C")
-                    CountryObserver.set(API_Response.value?.sys?.country)
-                    TempratureMaxObserver.set(API_Response.value?.main?.temp_max.toString()+"°C")
-                    TempratureMinObserver.set(API_Response.value?.main?.temp_min.toString()+"°C")
+                    TempratureObserver.set(API_Response.value?.main?.temp.toString()+" ° ")
+                    CountryObserver.set(City+" , "+API_Response.value?.sys?.country)
+                    TempratureMaxObserver.set(API_Response.value?.main?.temp_max.toString()+" ° ")
+                    TempratureMinObserver.set(API_Response.value?.main?.temp_min.toString()+" ° ")
                     MainWeatherObserver.set(API_Response.value?.weather?.get(0)?.description)
-                    FeelsLikeObserver.set("Feels Like : "+API_Response.value?.main?.temp.toString()+"°C")
-                    HumidityObserver.set(API_Response.value?.main?.humidity.toString()+"%")
-                    PressureObserver.set(API_Response.value?.main?.pressure.toString() +"HPa")
+                    FeelsLikeObserver.set("Feels Like : "+API_Response.value?.main?.temp.toString()+" ° ")
+                    HumidityObserver.set(API_Response.value?.main?.humidity.toString()+" %")
+                    PressureObserver.set(API_Response.value?.main?.pressure.toString() +" HPa")
                     windObserver.set(API_Response.value?.wind?.speed.toString()+" meter/sec")
-                    cloudsObserver.set(API_Response.value?.clouds?.all.toString()+"%")
+                    cloudsObserver.set(API_Response.value?.clouds?.all.toString()+" %")
                     TimeObserver.set(formatted)
                 }
                 else

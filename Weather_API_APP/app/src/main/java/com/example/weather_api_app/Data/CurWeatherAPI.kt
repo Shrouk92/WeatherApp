@@ -19,7 +19,8 @@ interface CurWeatherAPI {
     fun get_current_weather(
             @Query("q" ) Location: String,
             @Query("appid") Appid: String,
-            @Query("units") Celsius :String
+            @Query("units") Celsius :String,
+            @Query("lang")Lang:String
     ):Call<Currentweather>
 
 
